@@ -8,7 +8,13 @@ Das Aussehen ist möglichst schlicht und minimalistisch, soweit dies die Gebrauc
 Ein Teil der Elemente ist auskommentiert und kann bei Bedarf aktiviert werden. Z.B. "Kundenummer" oder "Ihr Zeichen", welche seltener benötigt werden. Außerdem kann das Aussehen leicht angepasst werden.
 
 ## Screenshots
-### Standardversion
+
+### Briefvorlage mit Standardoptionen
 ![Image of Yaktocat](screenshots/Briefvorlage%20mit%20Standardoptionen.png)
+
+[Briefvorlage mit Standardoptionen im PDF-Format](Latex-Briefvorlage.pdf)
+
 ### Briefvorlage mit allen Optionen
 ![Briefvorlage mit allen Optionen](screenshots/Briefvorlage%20mit%20allen%20Optionen.png)
+
+[Briefvorlage mit allen Optionen im PDF-Format](Beispiele/Latex-Briefvorlage%20mit%20allen%20Optionen.pdf)
