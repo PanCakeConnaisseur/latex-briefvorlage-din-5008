@@ -49,10 +49,8 @@
 \usepackage[utf8]{inputenc}
 % Includen von PDFs nach dem Brief, siehe \includepdf unten
 \usepackage{pdfpages}
-% klickbare Links und E-Mail-Adressen. Paket url kann keine klickbaren, Paket hyperref kann keine Schriftartänderung, deswegen bookmark
-\usepackage{bookmark}
-% URLs in derselben Schriftart, wie der Rest, anzeigen
-\urlstyle{same}
+% klickbare Links und E-Mail-Adressen. Paket url kann keine klickbaren, deswegen hyperref. hidelinks versteckt farbige Umrandungen
+\usepackage[hidelinks]{hyperref}
 
 
 \begin{document}
@@ -81,13 +79,13 @@
 
 % Absender-E-Mail-Adresse
 % der erste Paremeter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromemail}{\href{mailto:anton@absender.de}{\nolinkurl{anton@absender.de}}}
+\setkomavar{fromemail}{\href{mailto:anton@absender.de}{anton@absender.de}}
 
 % Absender-URL
 % (oben fromurl=true setzen)
 % eckige Klammern entfernen damit "URL:" erscheint oder dort Alternativtext eintragen
 % der erste Parameter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromurl}[]{\href{http://absender.de}{\nolinkurl{absender.de}}}
+\setkomavar{fromurl}[]{\href{http://absender.de}{absender.de}}
 
 
 
