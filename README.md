@@ -1,5 +1,5 @@
 # Latex-Briefvorlage nach DIN 5008
-Eine einfache Latex-Briefvorlage für Privateleute, die der DIN 5008 entsprechen sollte. Erstellt auf Basis von KOMA-Script scrlttr2.
+Eine einfache Latex-Briefvorlage für Privatleute, die der DIN 5008 entsprechen sollte. Erstellt auf Basis von KOMA-Script scrlttr2.
 
 Ziel ist es eine Vorlage zu haben, die allgemeinverständlich und alltagstauglich ist. Daher ist jede Option und jeder Parameter erklärt und kommentiert. Um das Dokument möglichst kurz zu halten, sind nur Elemente enthalten, die für eine "normale" Privatperson relevant sein könnten.
 
