@@ -1,0 +1,155 @@
+% Briefvorlage für Privatleute
+% Ersteller: Alexey Abel
+% Git-Repository: https://github.com/PanCakeConnaisseur/latex-briefvorlage-din-5008
+% Basiert auf KOMA-Scripts scrlttr2
+
+\documentclass[
+	% Schriftgröße
+	fontsize=12pt,
+	%
+	% zwischen Absätzen eine leere Zeile einfügen, statt lediglich Einrückung
+	parskip=full,
+	%
+	% Papierformat auf DIN-A4
+	paper=A4,	
+	%
+	% Absender im Briefkopf (ganz oben) rechts ausrichten, standardmäßig links
+	fromalign=right,
+	%
+	% Telefonnummer im Briefkopf anzeigen
+	fromphone=true,
+	%
+	% Faxnnummer im Briefkopf anzeigen
+	%fromfax=true,
+	%
+	% E-Mail-Adresse im Briefkopf anzeigen
+	fromemail=true,
+	%
+	% URL im Briefkopf anzeigen
+	%fromurl=true,
+	%
+	% Horizonatale Linie unter Absenderdaten (afteraddress) oder Absendername (aftername) hinzufügen
+	%fromrule=aftername,
+    %
+    % Faltmarkierungen verbergen
+    %foldmarks=false,
+    %
+    % Briefkopf (Absenderdaten oben rechts) verbergen
+    %firsthead=off
+    %
+    % Die neuste Version von scrlettr2 verwenden 
+	version=last,
+]{scrlttr2}
+
+% Eurosymbol-Unterstützung, nutzen mit \euro{}
+\usepackage{eurosym}
+% Sprache des Dokuments auf Deutsch
+\usepackage[ngerman]{babel}
+% Zeichenkodierung des Dokuments ist in UTF-8
+\usepackage[utf8]{inputenc}
+% Includen von PDFs nach dem Brief, siehe \includepdf unten
+\usepackage{pdfpages}
+% klickbare Links und E-Mail-Adressen. Paket url kann keine klickbaren, Paket hyperref kann keine Schriftartänderung, deswegen bookmark
+\usepackage{bookmark}
+% URLs in derselben Schriftart, wie der Rest, anzeigen
+\urlstyle{same}
+
+
+\begin{document}
+% Abstand zwischen Schlussgruß und Name vergrößern (alle drei Zeilen auskommentieren)
+%\makeatletter
+%\@setplength{sigbeforevskip}{3em}
+%\makeatother
+
+% Name nach Schlussgruß (unter Unterschrift) nicht nach rechts einrücken
+%\renewcommand*{\raggedsignature}{\raggedright}
+
+
+
+% Absendername
+\setkomavar{fromname}{Anton Absender}
+
+% Absenderadresse
+\setkomavar{fromaddress}{Absenderstraße 12\\67890 Aalen}
+
+% Absendertelefonnummer
+\setkomavar{fromphone}{+49 123 456 789 0}
+
+% Absenderfax
+% (oben fromfax=true setzen)
+%\setkomavar{fromfax}{+49 222 222 22}
+
+% Absender-E-Mail-Adresse
+% der erste Paremeter ist fürs Klicken, der zweite wird angezeigt/gedruckt
+\setkomavar{fromemail}{\href{mailto:anton@absender.de}{\nolinkurl{anton@absender.de}}}
+
+% Absender-URL
+% (oben fromurl=true setzen)
+% eckige Klammern entfernen damit "URL:" erscheint oder dort Alternativtext eintragen
+% der erste Parameter ist fürs Klicken, der zweite wird angezeigt/gedruckt
+\setkomavar{fromurl}[]{\href{http://absender.de}{\nolinkurl{absender.de}}}
+
+
+
+% Ort beim Datum
+\setkomavar{place}{Berlin}
+
+% Datum
+\setkomavar{date}{\today}
+
+% Betreff
+\setkomavar{subject}{Kündigung}
+
+
+
+% Kundennummer
+%\setkomavar{customer}[\customername]{DE-112233}
+
+% Ihr Zeichen
+%\setkomavar{yourref}[\yourrefname]{IZ-12345}
+
+% Ihr Schreiben vom
+%\setkomavar{yourmail}[\yourmailname]{1. April 2018}
+
+% Unser Zeichen
+%\setkomavar{myref}[\myrefname]{UZ-67890}
+
+
+\begin{letter}{
+	Empfänger GmbH\\
+	Empfängerstraße 123\\
+	12345 Essen
+}
+
+\opening{Sehr geehrte Damen und Herren,}
+
+Loreß "`ipsum"' 200 \euro{} sit amet, consectetur adipiscing elit. Aliquam faucibus euismod nibh. Nulla condimentum, odio in vehicula bibendum, tellus libero varius sapien, vel aliquam elit mauris ut leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae dapibus felis, ut euismod lectus.
+ 
+Vestibulum at auctor urna, in iaculis lectus. Nullam vitae magna metus. Praesent lacinia massa ac lobortis ullamcorper. Vestibulum laoreet, ligula ut tincidunt auctor, ligula lacus accumsan lectus, vitae aliquet justo diam et risus. Etiam suscipit magna vel velit tristique, quis egestas justo aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet elementum lacus, ac nulla.
+
+\closing{Mit freundlichen Grüßen}
+
+% Post Scriptum
+%\ps PS: Ich bin bis März nur telefonisch erreichbar.
+
+% Anlage(n)
+% Standardmäßig wird "Anlage" eingefügt, dies kann überschrieben werden, hier mit "Anlagen"
+%\setkomavar*{enclseparator}{Anlagen}
+%\encl{Kopie des Ausweises}
+
+% Verteiler
+%\cc{Bürgermeister, Vereinsvorsitzender}
+
+\end{letter}
+
+% Weitere PDFs können automatisch angefügt werden, z.B. die Ahnänge.
+%\includepdf[pages=-]{pfad/zu/weiteren/pdfs/dokument.pdf}
+% Pfad ist relativ zu dieser .tex Datei. Mit .. ein Verzeichnis hoch.
+% Der pages parameter spezifiziert welche Seiten eingefügt werden.
+% Beispiele:
+% pages=-				alle Seiten
+% pages={1-4}			Seite 1-4
+% pages={1,4,5}    		Seite 1, 4 und 5
+% pages={3,{},8-11,15}  Seite 3, leere Seite, Seite 8-11 und Seite 15
+
+\end{document}
