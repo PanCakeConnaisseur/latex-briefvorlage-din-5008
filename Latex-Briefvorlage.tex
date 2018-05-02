@@ -38,12 +38,18 @@
 	version=last,
 ]{scrlttr2}
 
-% Eurosymbol-Unterstützung, nutzen mit \euro{}
-\usepackage{eurosym}
-% Sprache des Dokuments auf Deutsch
-\usepackage[ngerman]{babel}
 % Zeichenkodierung des Dokuments ist in UTF-8
 \usepackage[utf8]{inputenc}
+% Das Unicode-Zeichen € als \euro interpretieren.
+% So kann man direkt € tippen anstatt jedes Mal \euro auszuschreiben.
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+% Eurosymbol-Unterstützung, nutzen mit \euro{}
+\usepackage{eurosym}
+
+% Sprache des Dokuments auf Deutsch
+\usepackage[ngerman]{babel}
+
 % Includen von PDFs nach dem Brief, siehe \includepdf unten
 \usepackage{pdfpages}
 % klickbare Links und E-Mail-Adressen. Paket url kann keine klickbaren, deswegen hyperref. hidelinks versteckt farbige Umrandungen
@@ -116,7 +122,7 @@
 
 \opening{Sehr geehrte Damen und Herren,}
 
-Loreß "`ipsum"' 200 \euro{} sit amet, consectetur adipiscing elit. Aliquam faucibus euismod nibh. Nulla condimentum, odio in vehicula bibendum, tellus libero varius sapien, vel aliquam elit mauris ut leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae dapibus felis, ut euismod lectus.
+Loreß "`ipsum"' 200 € sit amet, consectetur adipiscing elit. Aliquam faucibus euismod nibh. Nulla condimentum, odio in vehicula bibendum, tellus libero varius sapien, vel aliquam elit mauris ut leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae dapibus felis, ut euismod lectus.
  
 Vestibulum at auctor urna, in iaculis lectus. Nullam vitae magna metus. Praesent lacinia massa ac lobortis ullamcorper. Vestibulum laoreet, ligula ut tincidunt auctor, ligula lacus accumsan lectus, vitae aliquet justo diam et risus. Etiam suscipit magna vel velit tristique, quis egestas justo aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet elementum lacus, ac nulla.
 
