@@ -7,6 +7,8 @@ Das Aussehen ist möglichst schlicht und minimalistisch, soweit dies die Gebrauc
 
 Ein Teil der Elemente ist auskommentiert und kann bei Bedarf aktiviert werden. Z.B. "Kundenummer" oder "Ihr Zeichen", welche seltener benötigt werden. Außerdem kann das Aussehen leicht angepasst werden.
 
+[Latex-Briefvorlage.tex](https://github.com/PanCakeConnaisseur/latex-briefvorlage-din-5008/blob/master/Latex-Briefvorlage.tex) ist alles was benötigt wird, es gibt bewusst keine Includes. Alle anderen Dateien sind Beispiele und Dokumentation.
+
 ## Screenshots
 
 ### Briefvorlage mit Standardoptionen
