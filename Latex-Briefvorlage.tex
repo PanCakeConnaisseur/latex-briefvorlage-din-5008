@@ -40,6 +40,10 @@
 
 % Zeichenkodierung des Dokuments ist in UTF-8
 \usepackage[utf8]{inputenc}
+% Schriftart ist Latin Modern
+\usepackage{lmodern}
+% Zeichensatz der Ausgabe angepasst für westeuropäische Länder
+\usepackage[T1]{fontenc}
 
 % Eurosymbol-Unterstützung
 \usepackage{eurosym}
@@ -50,6 +54,9 @@
 % Sprache des Dokuments auf Deutsch
 \usepackage[ngerman]{babel}
 
+% Telefonnummern formatieren und verlinken
+\usepackage[foreign,country=DE]{phonenumbers}
+
 % Includen von PDFs nach dem Brief, siehe \includepdf unten
 \usepackage{pdfpages}
 
@@ -58,18 +65,7 @@
 \usepackage[hidelinks]{hyperref}
 
 
-
-\begin{document}
-% Abstand zwischen Schlussgruß und Name vergrößern (alle drei Zeilen auskommentieren)
-%\makeatletter
-%\@setplength{sigbeforevskip}{3em}
-%\makeatother
-
-% Name nach Schlussgruß (unter Unterschrift) nicht nach rechts einrücken
-%\renewcommand*{\raggedsignature}{\raggedright}
-
-
-
+% ---------- METADATEN ----------
 % Absendername
 \setkomavar{fromname}{Anton Absender}
 
@@ -77,23 +73,21 @@
 \setkomavar{fromaddress}{Absenderstraße 12\\67890 Aalen}
 
 % Absendertelefonnummer
-\setkomavar{fromphone}{+49 123 456 7891}
+\setkomavar{fromphone}{\phonenumber{01234567891}}
 
 % Absenderfax
 % (oben fromfax=true setzen)
 %\setkomavar{fromfax}{+49 222 222 22}
 
 % Absender-E-Mail-Adresse
-% der erste Paremeter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromemail}{\href{mailto:anton@absender.de}{anton@absender.de}}
+\newcommand*{\email}{anton@absender.de}
+\setkomavar{fromemail}{\href{mailto:\email}{\email}}
 
 % Absender-URL
 % (oben fromurl=true setzen)
 % eckige Klammern entfernen damit "URL:" erscheint oder dort Alternativtext eintragen
 % der erste Parameter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromurl}[]{\href{http://absender.de}{absender.de}}
-
-
+%\setkomavar{fromurl}[]{\href{http://absender.de}{absender.de}}
 
 % Ort beim Datum
 \setkomavar{place}{Berlin}
@@ -104,8 +98,6 @@
 % Betreff
 \setkomavar{subject}{Kündigung}
 
-
-
 % Kundennummer
 %\setkomavar{customer}[\customername]{DE-112233}
 
@@ -114,7 +106,29 @@
 
 % Ihr Schreiben vom
 %\setkomavar{yourmail}[\yourmailname]{1. April 2018}
+% -------------------------------
 
+% Metadaten in PDF schreiben
+\begingroup
+  \usekomavar[\def\author]{fromname}
+  \usekomavar[\def\subject]{subject}
+  \hypersetup{
+    pdftitle            = {Brief}, % PDF-Titel angeben
+    pdfauthor           = {\author}, % hier wird der Absender des Briefs verwendet
+    pdfsubject          = {\subject}, % hier wird der Betreff des Briefs verwendet
+    %pdfkeywords        = {Stichwort1,Stichwort2}, % eventuell Stichwörter angeben
+  }
+\endgroup
+
+
+\begin{document}
+% Abstand zwischen Schlussgruß und Name vergrößern (alle drei Zeilen auskommentieren)
+%\makeatletter
+%\@setplength{sigbeforevskip}{3em}
+%\makeatother
+
+% Name nach Schlussgruß (unter Unterschrift) nicht nach rechts einrücken
+%\renewcommand*{\raggedsignature}{\raggedright}
 
 
 \begin{letter}{
@@ -145,7 +159,10 @@ Vestibulum at auctor urna, in iaculis lectus. Nullam vitae magna metus. Praesent
 \end{letter}
 
 % Weitere PDFs können automatisch angefügt werden, z.B. die Ahnänge.
-%\includepdf[pages=-]{pfad/zu/weiteren/pdfs/dokument.pdf}
+%\includepdf[openright,pages=-]{pfad/zu/weiteren/pdfs/dokument.pdf}
+% openright: Die Anlagen starten auf ungerader (rechter) Seite, d.h. notfalls wird eine leere Seite eingefügt.
+%            Im doppelseitigem Druck wird dadurch besser zwischen Brief und Anlage getrennt.
+%            Für einseitigen Druck entfernen.
 % Pfad ist relativ zu dieser .tex Datei. Mit .. ein Verzeichnis hoch.
 % Der pages parameter spezifiziert welche Seiten eingefügt werden.
 % Beispiele:
