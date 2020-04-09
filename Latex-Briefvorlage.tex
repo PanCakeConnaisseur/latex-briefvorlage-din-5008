@@ -144,14 +144,17 @@ Vestibulum at auctor urna, in iaculis lectus. Nullam vitae magna metus. Praesent
 
 \end{letter}
 
-% Weitere PDFs können automatisch angefügt werden, z.B. die Ahnänge.
-%\includepdf[pages=-]{pfad/zu/weiteren/pdfs/dokument.pdf}
-% Pfad ist relativ zu dieser .tex Datei. Mit .. ein Verzeichnis hoch.
-% Der pages parameter spezifiziert welche Seiten eingefügt werden.
+% Weitere PDFs können automatisch angefügt werden, z.B. Ahnänge.
+%\includepdf[pages=-,openright]{pfad/zu/weiteren/pdfs/dokument.pdf}
+% Pfad ist relativ zu dieser tex-Datei. Mit .. ein Verzeichnis hoch.
+% Der pages-Parameter spezifiziert welche Seiten eingefügt werden.
 % Beispiele:
 % pages=-				alle Seiten
 % pages={1-4}			Seite 1-4
 % pages={1,4,5}			Seite 1, 4 und 5
 % pages={3,{},8-11,15}	Seite 3, leere Seite, Seite 8-11 und Seite 15
+% Der openright-Parameter startet die Anlagen auf ungerader (rechter) Seite, d.h. notfalls wird eine leere Seite
+% eingefügt. Im doppelseitigem Druck wird dadurch besser zwischen Brief und Anlage getrennt. Für einseitigen Druck
+% entfernen.
 
 \end{document}
