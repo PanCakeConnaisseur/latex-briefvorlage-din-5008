@@ -54,18 +54,15 @@
 % deswegen hyperref. Option hidelinks versteckt farbigen Rahmen.
 \usepackage[hidelinks]{hyperref}
 
+% Absendername unter Schlussformel entfernen.
+% Dieser wird bereits aus dem Briefkopf ersichtlich. Hier wird die signature-Variable einfach auf einen leeren Wert gesetzt und wäre sonst \usekomavar{fromname}.
+\setkomavar{signature}{}
 
-
-\begin{document}
-% Abstand zwischen Schlussgruß und Name vergrößern (alle drei Zeilen auskommentieren)
-%\makeatletter
-%\@setplength{sigbeforevskip}{3em}
-%\makeatother
-
-% Für Schlussformel und Absendernamen darunter Linksbündigkeit erzwingen
+% Für Schlussformel (und nicht vorhandenen Namen darunter) Linksbündigkeit erzwingen
 %\renewcommand*{\raggedsignature}{\raggedright}
 
 
+\begin{document}
 
 % Absendername
 \setkomavar{fromname}{Anton Absender}
