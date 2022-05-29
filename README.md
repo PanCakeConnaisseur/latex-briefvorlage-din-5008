@@ -14,9 +14,9 @@ Ein Teil der Elemente ist auskommentiert und kann bei Bedarf aktiviert werden. Z
 ### Briefvorlage mit Standardoptionen
 ![Briefvorlage mit Standardoptionen](Screenshots/Briefvorlage%20mit%20Standardoptionen.png)
 
-[PDF](Beispiele/Latex-Briefvorlage%20mit%20Standardoptionen.pdf)
+[im PDF-Format](Beispiele/Latex-Briefvorlage%20mit%20Standardoptionen.pdf)
 
 ### Briefvorlage mit allen Optionen
 ![Briefvorlage mit allen Optionen](Screenshots/Briefvorlage%20mit%20allen%20Optionen.png)
 
-[PDF](Beispiele/Latex-Briefvorlage%20mit%20allen%20Optionen.pdf)
+[im PDF-Format](Beispiele/Latex-Briefvorlage%20mit%20allen%20Optionen.pdf)
